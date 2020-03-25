@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		EE20154224027A970002E314 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20154124027A970002E314 /* main.swift */; };
+		EE20154924027ACA0002E314 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20154824027ACA0002E314 /* Game.swift */; };
+		EE20154B24027AF40002E314 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20154A24027AF40002E314 /* Weapon.swift */; };
+		EE20154D24027B110002E314 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20154C24027B110002E314 /* Character.swift */; };
+		EE20154F24027B6F0002E314 /* Soldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20154E24027B6F0002E314 /* Soldier.swift */; };
+		EE20155124027B840002E314 /* Officier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20155024027B840002E314 /* Officier.swift */; };
+		EE20155324027BA50002E314 /* Recruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20155224027BA50002E314 /* Recruit.swift */; };
+		EE20155524027BC50002E314 /* Chief.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20155424027BC50002E314 /* Chief.swift */; };
+		EE20155724027BE20002E314 /* Colonel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20155624027BE20002E314 /* Colonel.swift */; };
+		EE20155924027C060002E314 /* President.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20155824027C060002E314 /* President.swift */; };
+		EE423B8F2416DBA800336078 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE423B8E2416DBA800336078 /* Player.swift */; };
+		EE43547C24196F2F00ACFB08 /* Chest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE43547B24196F2F00ACFB08 /* Chest.swift */; };
+		EE69C63C240C331F00042313 /* M16.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE69C63B240C331F00042313 /* M16.swift */; };
+		EE69C63E240C336200042313 /* Scarh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE69C63D240C336200042313 /* Scarh.swift */; };
+		EE69C640240C348A00042313 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE69C63F240C348A00042313 /* Rocket.swift */; };
+		EE69C642240C34BB00042313 /* Glock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE69C641240C34BB00042313 /* Glock.swift */; };
+		EE69C644240C36A700042313 /* MP45.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE69C643240C36A700042313 /* MP45.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +41,22 @@
 /* Begin PBXFileReference section */
 		EE20153E24027A970002E314 /* P3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = P3; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE20154124027A970002E314 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EE20154824027ACA0002E314 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		EE20154A24027AF40002E314 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		EE20154C24027B110002E314 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		EE20154E24027B6F0002E314 /* Soldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Soldier.swift; sourceTree = "<group>"; };
+		EE20155024027B840002E314 /* Officier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Officier.swift; sourceTree = "<group>"; };
+		EE20155224027BA50002E314 /* Recruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruit.swift; sourceTree = "<group>"; };
+		EE20155424027BC50002E314 /* Chief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chief.swift; sourceTree = "<group>"; };
+		EE20155624027BE20002E314 /* Colonel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colonel.swift; sourceTree = "<group>"; };
+		EE20155824027C060002E314 /* President.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = President.swift; sourceTree = "<group>"; };
+		EE423B8E2416DBA800336078 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		EE43547B24196F2F00ACFB08 /* Chest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chest.swift; sourceTree = "<group>"; };
+		EE69C63B240C331F00042313 /* M16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M16.swift; sourceTree = "<group>"; };
+		EE69C63D240C336200042313 /* Scarh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scarh.swift; sourceTree = "<group>"; };
+		EE69C63F240C348A00042313 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		EE69C641240C34BB00042313 /* Glock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glock.swift; sourceTree = "<group>"; };
+		EE69C643240C36A700042313 /* MP45.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MP45.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +90,22 @@
 			isa = PBXGroup;
 			children = (
 				EE20154124027A970002E314 /* main.swift */,
+				EE20154824027ACA0002E314 /* Game.swift */,
+				EE20154A24027AF40002E314 /* Weapon.swift */,
+				EE69C63B240C331F00042313 /* M16.swift */,
+				EE69C63F240C348A00042313 /* Rocket.swift */,
+				EE69C63D240C336200042313 /* Scarh.swift */,
+				EE69C641240C34BB00042313 /* Glock.swift */,
+				EE69C643240C36A700042313 /* MP45.swift */,
+				EE20154C24027B110002E314 /* Character.swift */,
+				EE20154E24027B6F0002E314 /* Soldier.swift */,
+				EE20155024027B840002E314 /* Officier.swift */,
+				EE20155224027BA50002E314 /* Recruit.swift */,
+				EE20155424027BC50002E314 /* Chief.swift */,
+				EE20155624027BE20002E314 /* Colonel.swift */,
+				EE20155824027C060002E314 /* President.swift */,
+				EE423B8E2416DBA800336078 /* Player.swift */,
+				EE43547B24196F2F00ACFB08 /* Chest.swift */,
 			);
 			path = P3;
 			sourceTree = "<group>";
@@ -120,7 +168,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE20155924027C060002E314 /* President.swift in Sources */,
+				EE69C63E240C336200042313 /* Scarh.swift in Sources */,
+				EE20154F24027B6F0002E314 /* Soldier.swift in Sources */,
+				EE69C640240C348A00042313 /* Rocket.swift in Sources */,
 				EE20154224027A970002E314 /* main.swift in Sources */,
+				EE20155724027BE20002E314 /* Colonel.swift in Sources */,
+				EE69C644240C36A700042313 /* MP45.swift in Sources */,
+				EE69C642240C34BB00042313 /* Glock.swift in Sources */,
+				EE20155124027B840002E314 /* Officier.swift in Sources */,
+				EE20154924027ACA0002E314 /* Game.swift in Sources */,
+				EE20155524027BC50002E314 /* Chief.swift in Sources */,
+				EE20154B24027AF40002E314 /* Weapon.swift in Sources */,
+				EE69C63C240C331F00042313 /* M16.swift in Sources */,
+				EE20154D24027B110002E314 /* Character.swift in Sources */,
+				EE43547C24196F2F00ACFB08 /* Chest.swift in Sources */,
+				EE20155324027BA50002E314 /* Recruit.swift in Sources */,
+				EE423B8F2416DBA800336078 /* Player.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
