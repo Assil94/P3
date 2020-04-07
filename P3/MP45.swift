@@ -9,9 +9,8 @@
 import Foundation
 
 class MP45: Weapon {
-    let name = "MP45"
     init() {
-         super.init(dammage: 30)
+        super.init(dammage: 30, name: "MP45")
      }
     
 }

@@ -9,8 +9,7 @@
 import Foundation
 
 class Glock: Weapon {
-    let name = "Glock"
     init() {
-         super.init(dammage: 25)
+        super.init(dammage: 25, name: "Glock")
      }
 }

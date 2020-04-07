@@ -9,8 +9,7 @@
 import Foundation
 
 class Scarh: Weapon {
-    let name = "Scar-H"
     init() {
-         super.init(dammage: 28)
+        super.init(dammage: 28, name: "Scar-h")
      }
 }

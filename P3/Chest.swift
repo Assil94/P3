@@ -9,9 +9,8 @@
 import Foundation
 
 class Chest: Weapon {
-    let name = "bombe atomique"
     init() {
-        super.init(dammage: 100)
+       super.init(dammage: 100, name: "Lance Flammes")
     }
 }
 
