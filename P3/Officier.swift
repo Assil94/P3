@@ -11,6 +11,6 @@ import Foundation
 class Officier: Character {
     init() {
         let weapon = MP45()
-        super.init(name: "Commandant", weapon: weapon)
+        super.init(name: "Officier", weapon: weapon)
     }
 }

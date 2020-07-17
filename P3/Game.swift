@@ -9,98 +9,103 @@
 import Foundation
 
 class Game {
-    // initialisation des propriétés qui vont nous servir pour le jeu.
-    var turn = 0
-    let player1 = Player()
-    let player2 = Player()
-    
-    // La méthode start permet de demander aux joueurs leur nom et de préparer la partie.
-    func start() {
-        print("Bienvenue aux deux joueurs qui vont s'affronter ! Joueur 1, choisis un nom." )
+    // initialization of the properties which will serve us for the game.
+    private var round = 0
+    private let player1 = Player()
+    private let player2 = Player()
+    // The start method allows you to ask players for their names and prepare for the game.
+     func start() {
+        print("Welcome to the two players who will compete! Player 1, choose a name." )
         if let namePlayer1 = readLine() {
             let trimmed = namePlayer1.trimmingCharacters(in: .whitespacesAndNewlines)
             if trimmed.isEmpty {
-                print("Entrez quelquechose.")
+                print("Enter something.")
                 start()
             } else {
                 player1.name = namePlayer1
-                print("Tu es \(namePlayer1). \n1 Au tour du joueur 2 de choisir un nom.")
+                print("You are \(namePlayer1). \n1 Now player 2 choose a name.")
                 if let namePlayer2 = readLine() {
                     let trimmed = namePlayer2.trimmingCharacters(in: .whitespacesAndNewlines)
-                    
                     if trimmed.isEmpty {
-                        print("Entrez quelque chose.")
+                        print("Enter something.")
                         start()
                     } else if namePlayer1 == namePlayer2 {
-                        print("Vous ne pouvez pas avoir le même nom.")
+                        print("You can't have the same name.")
                         start()
                     } else {
                         player2.name = namePlayer2
-                        print("Tu es \(namePlayer2).")
+                        print("You are \(namePlayer2).")
                         Character.completePresentation()
-                        firstTeam = player1.makeTeam()
-                        secondTeam = player2.makeTeam()
+                        player1.team = player1.makeTeam()
+                        player2.team = player2.makeTeam()
                         makeBattle()
                     }
                 }
             }
         }
     }
-    
-    func makeBattle() {
+    // This method continue the battle while any player gets 0 health point.
+    private func makeBattle() {
         while player1.teamLifePoints > 0 && player2.teamLifePoints > 0 {
-            firstTeam = turn(attacker: player1, defender: player2)
-            secondTeam = turn(attacker: player2, defender: player1)
-            turn += 1
+            player1.team = turn(attacker: player1, defender: player2)
+            player2.team = turn(attacker: player2, defender: player1)
+            round += 1
         }
-        whoWON()
+        whoWon()
     }
-    
-    // Cette méthode nous permet determiner le tour de chacun.
-    func turn(attacker: Player, defender: Player) -> [Character] {
-        print("place au combat, \(attacker.name) vs \(defender.name). \n \(attacker.name) pour soigner tapes 1. \n Pour attaquer tapes 2.")
+    // This method defined the turns..
+    private func turn(attacker: Player, defender: Player) -> [Character] {
+        print("The battle starts, \(attacker.name) vs \(defender.name). \n \(attacker.name) to treat type 1. \n for attack type 2.")
         if let choice = readLine() {
             if Int(choice) == 1 {
-                print("Choisis un personnage a soigner.")
+                print("Choose a character to treat.")
                 attacker.selectCharacter()
                 if let choice = readLine() {
-                    if let index = Int(choice), index <= 3 {
-                        let number = index - 1
-                        print("Vous avez selectionné \(attacker.team[number]) pour être soigné.")
+                    if let choosenNumber = Int(choice), choosenNumber <= 3 {
+                        let number = choosenNumber - 1
+                        if attacker.team[number].lifePoints <= 0 {
+                            print("Choose an other character")
+                            return turn(attacker: attacker, defender: defender)
+                        }
+                        print("You selected \(attacker.team[number]) to be treated.")
                         attacker.healing(for: attacker.team[number], player: attacker)
                     } else {
-                        print("Erreur dans votre selection.")
+                        print("Error in your selection.")
                         return turn(attacker: attacker, defender: defender)
                     }
                 }
-            }
-            else if Int(choice) == 2 {
+            } else if Int(choice) == 2 {
                 attacker.selectCharacter()
                 if let choice = readLine() {
-                    if let index = Int(choice), index <= 3 {
-                        let number = index - 1
-                        print("Vous avez selectionné \(attacker.team[number].name) pour combattre.")
-                        attacker.takeDammage(dammage: attacker.team[number].weapon.dammage, defender: defender)
+                    if let choosenNumber = Int(choice), choosenNumber <= 3 {
+                        let indexCharacter = choosenNumber - 1
+                        if attacker.team[indexCharacter].lifePoints <= 0 {
+                            print("Choose an other character")
+                            return turn(attacker: attacker, defender: defender)
+                        }
+                        print("You selected \(attacker.team[indexCharacter].name) to battle.")
+                        attacker.team[indexCharacter].changeWeaponRandomly()
+                        attacker.takeDammage(indexCharacter: indexCharacter, defender: defender)
                     } else {
-                        print("Erreur dans votre selection.")
+                        print("Error in your selection.")
                         return turn(attacker: attacker, defender: defender)
                     }
                 }
-            } else { return turn(attacker: attacker, defender: defender)
+            } else {
+                return turn(attacker: attacker, defender: defender)
             }
         }
         return attacker.team
     }
-    
-    // Cette méthode affiche les statistiques de la partie.
-    func whoWON() {
+    // This method display the statistics of the game.
+    private func whoWon() {
         if player1.teamLifePoints > player2.teamLifePoints {
-            print("\(player1.name) à gagné !! Felicitions, \(player2.name) ce n'est pas grave retente t'as chance")
+            print("\(player1.name) won !! Congrats, \(player2.name) Take a revange.")
         } else {
-            print("\(player2.name) à gagné !! Felicitions, \(player1.name) ce n'est pas grave retente t'as chance")
+            print("\(player2.name) won !! Félicitation, \(player1.name) Take a revange.")
         }
-        print("Il y a eu \(turn) tour")
-        firstTeam = Character.listTeam(player: player1)
-        secondTeam = Character.listTeam(player: player2)
+        print("The game had \(round) turns.")
+        player1.team = Character.listTeam(player: player1)
+        player2.team = Character.listTeam(player: player2)
     }
 }

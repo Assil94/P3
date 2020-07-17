@@ -18,7 +18,7 @@
 		EE20155724027BE20002E314 /* Colonel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20155624027BE20002E314 /* Colonel.swift */; };
 		EE20155924027C060002E314 /* President.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20155824027C060002E314 /* President.swift */; };
 		EE423B8F2416DBA800336078 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE423B8E2416DBA800336078 /* Player.swift */; };
-		EE43547C24196F2F00ACFB08 /* Chest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE43547B24196F2F00ACFB08 /* Chest.swift */; };
+		EE43547C24196F2F00ACFB08 /* Flamethrower.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE43547B24196F2F00ACFB08 /* Flamethrower.swift */; };
 		EE69C63C240C331F00042313 /* M16.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE69C63B240C331F00042313 /* M16.swift */; };
 		EE69C63E240C336200042313 /* Scarh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE69C63D240C336200042313 /* Scarh.swift */; };
 		EE69C640240C348A00042313 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE69C63F240C348A00042313 /* Rocket.swift */; };
@@ -51,7 +51,7 @@
 		EE20155624027BE20002E314 /* Colonel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colonel.swift; sourceTree = "<group>"; };
 		EE20155824027C060002E314 /* President.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = President.swift; sourceTree = "<group>"; };
 		EE423B8E2416DBA800336078 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		EE43547B24196F2F00ACFB08 /* Chest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chest.swift; sourceTree = "<group>"; };
+		EE43547B24196F2F00ACFB08 /* Flamethrower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flamethrower.swift; sourceTree = "<group>"; };
 		EE69C63B240C331F00042313 /* M16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M16.swift; sourceTree = "<group>"; };
 		EE69C63D240C336200042313 /* Scarh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scarh.swift; sourceTree = "<group>"; };
 		EE69C63F240C348A00042313 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				EE20155624027BE20002E314 /* Colonel.swift */,
 				EE20155824027C060002E314 /* President.swift */,
 				EE423B8E2416DBA800336078 /* Player.swift */,
-				EE43547B24196F2F00ACFB08 /* Chest.swift */,
+				EE43547B24196F2F00ACFB08 /* Flamethrower.swift */,
 			);
 			path = P3;
 			sourceTree = "<group>";
@@ -137,7 +137,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Assil Heddar";
 				TargetAttributes = {
 					EE20153D24027A970002E314 = {
@@ -182,7 +182,7 @@
 				EE20154B24027AF40002E314 /* Weapon.swift in Sources */,
 				EE69C63C240C331F00042313 /* M16.swift in Sources */,
 				EE20154D24027B110002E314 /* Character.swift in Sources */,
-				EE43547C24196F2F00ACFB08 /* Chest.swift in Sources */,
+				EE43547C24196F2F00ACFB08 /* Flamethrower.swift in Sources */,
 				EE20155324027BA50002E314 /* Recruit.swift in Sources */,
 				EE423B8F2416DBA800336078 /* Player.swift in Sources */,
 			);
@@ -307,6 +307,7 @@
 		EE20154624027A970002E314 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -316,6 +317,7 @@
 		EE20154724027A970002E314 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

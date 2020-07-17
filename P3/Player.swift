@@ -8,48 +8,50 @@
 
 import Foundation
 
-var firstTeam: [Character] = []
-var secondTeam: [Character] = []
 
 class Player {
     var name = ""
     var teamLifePoints = 300
     var team: [Character] = []
-    
+    // This method allows us to select a character.
     func selectCharacter() {
         for (index, character) in team.enumerated() {
             let number = index + 1
             let name = character.name
             if character.lifePoints > 0 {
-                print("pour \(name) Tapez \(number)")
+                print("for \(name) type \(number)")
             }
         }
     }
-    
+    // Method allowing to compose a team.
     func makeTeam() -> [Character] {
-        print("Ok \(name) constitues ton équipe."
-            +  "\n Tapez 1 pour Soldier \n Tapez 2 pour Officier"
-            + "\n Tapez 3 pour Recruit \n Tapez 4 pour Chef \n Tapez 5 pour Colonel \n Tapez 6 pour Président")        
+        print("Ok \(name) make your team.")
         while team.count < 3 {
+            for (index, character) in Character.characterList.enumerated() {
+                let number = index + 1
+                let name = character.name
+                print("for \(name) type \(number)")
+            }
             if let choice = readLine() {
-                if let index = Int(choice), index <= 6 {
+                if let index = Int(choice), index <= Character.characterList.count {
                     let number = index - 1
-                    print("Vous avez choisis le personnage \(Character.characterList[number].name), choisissez un autre personnage.")
+                    print("You chose the character \(Character.characterList[number].name), choose another character.")
                     team.append(Character.characterList[number])
+                    Character.characterList.remove(at: number)
                 } else {
-                    print("Recommencez")
+                    print("Restart")
                     return makeTeam()
                 }
             }
         }
-        print("Bravo \(name) tu as 3 personnages :), voici ton équipe.")
+        print("Congrats! \(name) you have 3 character :), here is your team.")
         for character in team {
             print(character.name)
         }
         return team
     }
-    
-    func removeLifePoints(dammage: Int, index: Int) {
+    // Method for removing a character's hit points.
+    private func removeLifePoints(dammage: Int, index: Int) {
         let character = team[index]
         if dammage >= character.lifePoints {
             teamLifePoints -= character.lifePoints
@@ -58,24 +60,25 @@ class Player {
         }
         character.lifePoints -= dammage
     }
-    
-    func takeDammage(dammage: Int, defender: Player) {
-        print("Qui voulez-vous attaquer ?")
+    // Method for inflicting damage on a character..
+    func takeDammage(indexCharacter: Int, defender: Player) {
+        print("Who do you want to attack?")
+        let dammage = team[indexCharacter].weapon.dammage
         defender.selectCharacter()
         if let choice = readLine() {
             if let index = Int(choice), index <= 3 {
                 let number = index - 1
-                print("Vous avez selectionné \(defender.team[number].name) à attaquer.")
+                print("You have selected \(defender.team[number].name) to attack.")
                 defender.removeLifePoints(dammage: dammage, index: number)
                 Character.regulateAndResult(character: defender.team[number])
             } else {
-                print("Erreur dans votre selection.")
-                return takeDammage(dammage: dammage, defender: defender)
+                print("Error in your selection.")
+                return takeDammage(indexCharacter: indexCharacter, defender: defender)
             }
         }
-        print("Votre équipe a \(defender.teamLifePoints) points de vie.")
+        print("Your team have \(defender.teamLifePoints) health point.")
     }
-    
+    // Method for treating a character.
     func healing(for character: Character, player: Player) {
         character.lifePoints += 25
         player.teamLifePoints += 25
@@ -85,6 +88,6 @@ class Player {
         if character.lifePoints > 100 {
             character.lifePoints = 100
         }
-        print("Ton personnage \(character.name) a maintenant \(character.lifePoints).")
+        print("Your character \(character.name) now have \(character.lifePoints) health point.")
     }
 }

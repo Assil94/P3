@@ -19,33 +19,39 @@ class Character {
         self.name = name
         self.weapon = weapon
     }
-    convenience init() {
-        self.init(name: "Hello", weapon: Rocket())
+    
+    private func presentation() {
+        print("I am \(name), i have \(lifePoints) HP. My weapon is \(weapon.name) and deals \(weapon.dammage) dammages.")
     }
-    func presentation() {
-        print("Je suis \(name), j'ai \(lifePoints) de point vie. Je suis equipé de \(weapon.name) qui fait \(weapon.dammage) de degâts.")
-    }
-    // Cette méthode est là pour afficher les personnages disponibles.
+    // This method display characters available.
     static func completePresentation() {
-        print("Les Personnages disponibles sont :")
+        print("Characters available are :")
         for character in Character.characterList {
             character.presentation()
         }
     }
-    // Liste des personnages
+    // Shows character list.
     static func listTeam(player: Player) -> [Character] {
-        print("La liste des personnages et statistiques de l'équipe de \(player.name).")
+        print("The list of characters and team statistics of \(player.name).")
         for character in player.team {
-            print("Je suis \(character.name), il me reste \(character.lifePoints) et je suis équipé de \(character.weapon).")
+            print("I am \(character.name), I have left \(character.lifePoints) and I am equipped with \(character.weapon.name).")
         }
         return player.team
     }
-    // Pour eviter qu'un personnage dessende en dessous de 0 pv
-   static func regulateAndResult(character: Character) {
-           if character.lifePoints < 0 {
-               character.lifePoints = 0
-               print("Ce personnage est mort.")
-           }
-           print("Les points de vie de \(character.name) sont de: \(character.lifePoints).")
-       }
+    // To prevent a character from falling below 0 hp.
+    static func regulateAndResult(character: Character) {
+        if character.lifePoints < 0 {
+            character.lifePoints = 0
+            print("This character is dead.")
+        }
+        print("The life points of \(character.name) are equal to: \(character.lifePoints).")
+    }
+    // This method change the weapon randomly
+    func changeWeaponRandomly() {
+        let randomNumber = Int.random(in: 1...2)
+        if randomNumber == 1 {
+            weapon = Flamethrower()
+            print("A chest has appeared, it contains a new weapon which is \(weapon.name).")
+        }
+    }
 }

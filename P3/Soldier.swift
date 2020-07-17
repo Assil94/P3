@@ -11,6 +11,6 @@ import Foundation
 class Soldier: Character {
     init() {
         let weapon = Scarh()
-        super.init(name: "Soldat", weapon: weapon)
+        super.init(name: "Soldier", weapon: weapon)
     }
 }

@@ -10,6 +10,6 @@ import Foundation
 
 class Rocket: Weapon {
     init() {
-        super.init(dammage: 50, name: "Lance Roquette")
+        super.init(dammage: 50, name: "Rocket")
      }
 }

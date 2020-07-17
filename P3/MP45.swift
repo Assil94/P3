@@ -11,6 +11,5 @@ import Foundation
 class MP45: Weapon {
     init() {
         super.init(dammage: 30, name: "MP45")
-     }
-    
+     }    
 }

@@ -11,6 +11,6 @@ import Foundation
 class President: Character {
     init() {
         let weapon = Rocket()
-        super.init(name: "Président", weapon: weapon)
+        super.init(name: "President", weapon: weapon)
     }
 }
